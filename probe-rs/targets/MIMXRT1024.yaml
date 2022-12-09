@@ -1,0 +1,118 @@
+name: MIMXRT1024
+generated_from_pack: true
+pack_file_release: 13.0.0
+variants:
+- name: MIMXRT1024CAG4A
+  cores:
+  - name: main
+    type: armv7em
+    core_access_options: !Arm
+      ap: 0
+      psel: 0
+  memory_map:
+  - !Ram
+    name: SRAM_OC
+    range:
+      start: 0x20200000
+      end: 0x20220000
+    cores:
+    - main
+  - !Ram
+    name: SRAM_ITC
+    range:
+      start: 0x0
+      end: 0x10000
+    cores:
+    - main
+  - !Ram
+    name: SRAM_DTC
+    range:
+      start: 0x20000000
+      end: 0x20010000
+    cores:
+    - main
+  - !Nvm
+    name: PROGRAM_FLASH
+    range:
+      start: 0x60000000
+      end: 0x60400000
+    is_boot_memory: true
+    cores:
+    - main
+  - !Nvm
+    name: ROMCP
+    range:
+      start: 0x200000
+      end: 0x218000
+    cores:
+    - main
+  flash_algorithms:
+  - mimxrt1024_quadspi_4kb_sec
+- name: MIMXRT1024DAG5A
+  cores:
+  - name: main
+    type: armv7em
+    core_access_options: !Arm
+      ap: 0
+      psel: 0
+  memory_map:
+  - !Ram
+    name: SRAM_OC
+    range:
+      start: 0x20200000
+      end: 0x20220000
+    cores:
+    - main
+  - !Ram
+    name: SRAM_ITC
+    range:
+      start: 0x0
+      end: 0x10000
+    cores:
+    - main
+  - !Ram
+    name: SRAM_DTC
+    range:
+      start: 0x20000000
+      end: 0x20010000
+    cores:
+    - main
+  - !Nvm
+    name: PROGRAM_FLASH
+    range:
+      start: 0x60000000
+      end: 0x60400000
+    is_boot_memory: true
+    cores:
+    - main
+  - !Nvm
+    name: ROMCP
+    range:
+      start: 0x200000
+      end: 0x218000
+    cores:
+    - main
+  flash_algorithms:
+  - mimxrt1024_quadspi_4kb_sec
+flash_algorithms:
+- name: mimxrt1024_quadspi_4kb_sec
+  description: MIMXRT1024 4mB QuadSPI NOR Flash
+  default: true
+  instructions: QLpwR0C6cEfAunBHwLpwR2JJAWBiSUFgASMCRgNzByFAMpFxmQUBZQMhQXOBcxNxACFBdMFzAXRBggF3ECEBZAQhUXGKAQFG/zGBMQpkEgFKZBIBCmX/IckxC1QBRlFKgDEKYFBKSmBQSgphUEoKY/8wUEoBMAJhT0pCYU1KEjoKZUxJpjEBYHBHcLVLSAGJSQhJAAGBSkkKiVIIUgAKgQKIBCNSBwAqAtoCiJpDAoAIiEAHAtUIiJhDCIBCSEFJQWBCSYFgAWiAIpFDICIRQwFgP0kRIMhiPkhBackDINU8SgAhgDJRYL/zT49BaQEjGwSZQ0Fhv/NPjxBoNkwBAUkMwASDDcoFGEaSDIUHFUNlY0Ae+tJJHvXSv/NPj7/zb48uSAEhSQJIRADwo/grSEhE//dt/ylJACBJRADwUPhwvQAgcEclSRC1ASMAIpsFSUQQRgDwU/gAKADQASAQvQUhSQdCGB1JELUBIxsDSUQAIADwRPgAKADQASAQvQUhE0ZJB0IYFUkQtUlEACAA8C34ACgA0AEgEL0AAEZDRkIABAFW6wQYCgYyBCYFBAEkBgQAADIEGAgEIgAAAIALQAAADUAgxSjZAMALQP//AABAgR9AAO0A4EDvAOAEAAAAASJSBdJpEmlSaBBHMLQBJGQF5GkkaaRopEYwvGBHMLQBJGQF5GkkaSRppEYwvGBHCEsYRwdLtDsYRwEiUgXSaRJp0mkQRwEhSQXJaQlpiWkIRwAAXQUhAAHgBMAJHwQp+9KLBwHVAoCAHMkHANACcHBHACkL0MMHAtACcEAcSR4CKQTTgwcC1QKAgByJHuPnACLu5wAi3+cAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+  pc_init: 0x8b
+  pc_uninit: 0x143
+  pc_program_page: 0x17f
+  pc_erase_sector: 0x161
+  pc_erase_all: 0x147
+  data_section_offset: 0x278
+  flash_properties:
+    address_range:
+      start: 0x60000000
+      end: 0x60400000
+    page_size: 0x100
+    erased_byte_value: 0xff
+    program_page_timeout: 100
+    erase_sector_timeout: 5000
+    sectors:
+    - size: 0x1000
+      address: 0x0
